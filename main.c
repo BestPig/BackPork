@@ -323,7 +323,7 @@ static void patch_game(pid_t child_pid, const char *title_id) {
         printf("[WARNING] Failed to find random folder for %s\n", title_id);
         return;
     }
-	
+
 	notify("Detected game %s. Patching...", title_id);
     printf("[INFO] Detected game %s (pid %d) in sandbox %s. Patching...\n", title_id, child_pid, sandbox_id);
 
@@ -376,8 +376,8 @@ int main() {
         close(kq);
         return -1;
     }
-	
-	notify("Welcome To Backpork 0.1 By BestPig");
+
+	notify("Welcome To BackPork 0.1 By BestPig 🐷");
     printf("[INFO] Monitoring SceSysCore.elf (pid %d) for game launches...\n", syscore_pid);
 
     pid_t child_pid = -1;

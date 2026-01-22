@@ -32,6 +32,8 @@ Original concept and some code by idlesauce
 
 ## Usage
 
+> Note: To boot a game, you must downgrade its `eboot.bin` and every `prx`/`sprx` using this tool [ps5_elf_sdk_downgrade.py](https://gist.github.com/idlesauce/2ded24b7b5ff296f21792a8202542aaa); without this, the system will refuse to launch the title.
+
 1. Place your replacement libraries in a `fakelib` folder inside the game's installation directory (`PPSSAXXXXX/fakelib/`)
 2. Run the `backpork.elf` payload on your PS5
 3. Launch your game - the fakelibs will be automatically mounted
@@ -48,6 +50,8 @@ It is recommended to sideload as few libraries as possible, as there is no guara
 ### Patching Libraries
 
 I provide patches in the `patches/` folder (BPS format) to patch libraries from firmware 10.01 and make them functional on firmware 7.61. This is probably achievable for lower firmwares as well, but it has not been tested and would require additional patches.
+
+> Warning: Patches are split by firmware. I recommend using the highest patch set that matches your firmware instead of using lower versions because I had to alter the normal behavior of some functions to make it work.
 
 To apply a patch:
 1. The library to patch must be decrypted (ELF format, not SELF)
@@ -68,5 +72,9 @@ This project is provided for educational and research purposes.
 
 ## Credits
 
-- [idlesauce](https://github.com/idlesauce/) For the idea, code and support
-- [john-tornblom](https://github.com/john-tornblom) For the SDK
+- [idlesauce](https://github.com/idlesauce/) for the idea, code and support
+- [john-tornblom](https://github.com/john-tornblom) for the SDK
+- [EchoStretch](https://github.com/EchoStretch/) for endlessly testing my stupid, broken patches!
+- kira for helping me figure out some patches (also known as my useful notepad)
+- SlimGary for being there every day, for years.
+- [Hakim](https://x.com/Hakim9919271/status/2013605108848718219) for the love of **pork** 🐷😍
